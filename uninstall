@@ -1,0 +1,22 @@
+#!/bin/bash
+
+wal_template=$HOME/.config/wal/templates/spice-color.ini
+wal_cached=$HOME/.cache/wal/spice-color.ini
+themes_dir=$HOME/.config/spicetify/Themes
+
+rm_theme () {
+  rm -rv $themes_dir/pywal
+}
+
+rm_template () {
+  rm -v $wal_template
+  rm -v $wal_cached
+}
+
+echodone () {
+    echo 'removed it'
+}
+
+rm_theme
+rm_template
+echodone

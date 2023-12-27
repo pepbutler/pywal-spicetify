@@ -1,0 +1,27 @@
+#!/bin/bash
+
+wal_template=$HOME/.config/wal/templates/spice-color.ini
+wal_cached=$HOME/.cache/wal/spice-color.ini
+themes_dir=$HOME/.config/spicetify/Themes
+
+install_theme () {
+  cp -r $(pwd) $themes_dir/pywal
+}
+
+install_template () {
+    cp $(pwd)/spice-color.ini $wal_template
+    touch $wal_cached
+}
+
+link_template () {
+    ln -sr $wal_cached $themes_dir/pywal/color.ini
+}
+
+echodone () {
+    echo 'run "spicetify config current_theme pywal" and do "wal-w" to have theme'
+}
+
+install_theme
+install_template
+link_template
+echodone
